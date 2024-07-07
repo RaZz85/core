@@ -555,6 +555,7 @@ SENSORS: Final[tuple[HomeWizardSensorEntityDescription, ...]] = (
         device_class=SensorDeviceClass.POWER,
         has_fn=lambda data: data.active_power_average_w is not None,
         value_fn=lambda data: data.active_power_average_w,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     HomeWizardSensorEntityDescription(
         key="monthly_power_peak_w",
@@ -563,6 +564,7 @@ SENSORS: Final[tuple[HomeWizardSensorEntityDescription, ...]] = (
         device_class=SensorDeviceClass.POWER,
         has_fn=lambda data: data.monthly_power_peak_w is not None,
         value_fn=lambda data: data.monthly_power_peak_w,
+        state_class=SensorStateClass.MEASUREMENT,
     ),
     HomeWizardSensorEntityDescription(
         key="active_liter_lpm",
